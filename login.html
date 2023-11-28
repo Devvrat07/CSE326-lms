@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Check</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("https://akm-img-a-in.tosshub.com/indiatoday/images/story/202305/lpu-sixteen_nine.jpg?VersionId=snMLtUZYWRillH_z11uAwSMmoGG5.r4E&size=690:388");
+            background-size:cover ;
+        }
+
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 >Enter Details</h2>
+
+    <form id="inputForm" onsubmit="checkInputs(event)">
+        <label for="User">Username:</label>
+        <input type="text" id="inputBox1" required>
+
+        <br>
+
+        <label for="Password">   Password:</label>
+        <input type="password" id="inputBox2" required>
+
+        <br>
+
+        <button type="login">Login</button>
+    </form>
+
+    <script>
+        function checkInputs(event) {
+            event.preventDefault(); // Prevents the default form submission
+
+            // Get the values from the input boxes
+            var inputValue1 = document.getElementById('inputBox1').value.toLowerCase();
+            var inputValue2 = document.getElementById('inputBox2').value.toLowerCase();
+
+            
+            if (inputValue1 === 'hello' && inputValue2 === 'goodbye') {
+                // Redirect to next.html
+                window.location.href = 'next.html';
+            } else {
+                // Provide feedback or take other actions if the conditions are not met
+                alert('Please enter valid login details!');
+            }
+        }
+    </script>
+
+</body>
+</html>
